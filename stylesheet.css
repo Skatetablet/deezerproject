@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100px;
+}
+
+nav {
+    margin: 0;
+}
+.navbar {
+    text-align: center;
+}
+
+ul {
+    padding:0;  
+    background: #00c7f2;
+    font-size: 15px;  
+    text-transform:uppercase;
+}
+
+ul li {
+    display:inline-block;
+    margin: 10px;
+}
+
+ul li a {
+    display:block;  
+    margin: 15px;  
+    color: white;  
+    text-decoration:none;
+}
+
+ul li a:hover {
+    color: #000;
+}
+
+.header {
+    text-align: center;
+    margin: 15px;
+}
+
+.header img {
+    width: 25%;
+}
+
+.btn {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #00c7f2;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #00c7f2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  background-color: #c1f1fc;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/*  ---  searchBar  ---   */
+
+.search {
+    width: 80%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00c7f2;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00c7f2;
+    background: #00c7f2;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
