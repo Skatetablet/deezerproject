@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deezer Project</title>
     <link rel="stylesheet" href="stylesheet.css">
-    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <body>
     <nav class="nav navbar">
@@ -19,13 +20,149 @@
     </nav>
     <main>
         <section  class="search">
-            <input type="text" class="searchTerm" placeholder="Busca tu Artista">
-            <button type="submit" class="searchButton">
+            <input type="text" class="searchTerm" placeholder="Busca tu Artista" id="SearchTerm">
+            <button type="submit" class="searchButton" onclick="buscarTermino()">
                 <img src="img/magnifier.png" alt="">
             </button>
         </section>
     
-        <section id="albumarea" class="p-3"></section>
+        <section id="albumarea" class="p-3">
+            
+
+
+        </section>
         
     </main>
+    <style>
+    th{ 
+        color:#fff;
+            }
+</style>
+<div id="resultado">
+</div>
+<div id="resultado2">
+</div>
+<img src="" id="resultado_img" >
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>First</th>
+        <th>Last</th>
+        <th>Email</th>
+    </tr>
+
+    <tbody id="myTable">
+    <tbody id="myPLTable">
+        
+    </tbody>
+</table>
+    <script>
+    function limpiarTabla(){
+        $("#myTable").find("tr").remove();
+
+    }    
+
+    function buscarTermino(){
+        limpiarTabla()
+
+        var SearchTerm = $("#SearchTerm").val();
+        let urlXD = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q=" + SearchTerm;
+        var myArray = []
+        
+
+        $.ajax({
+            method:'GET',
+            url:urlXD,
+            success:function(response){
+                myArray = response.data
+                buildTable(myArray)
+                console.log(myArray)
+            }
+        })
+
+    }
+
+
+////////////
+    function ShowResult(id){
+        limpiarTabla()
+        document.getElementById("resultado").innerHTML ='Vista: '+id;
+        var myResults = []
+        let urlResultado = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/" + id;
+
+        $.ajax({
+            method:'GET',
+            url: urlResultado,
+            success:function(response){
+                myResults = response
+                // buildResults(myResults)
+                console.log(myResults);
+                console.log(myResults.nb_fan);
+                document.getElementById("resultado").innerHTML ='Nombre: '+myResults.name;
+                document.getElementById("resultado2").innerHTML ='id: '+myResults.id;
+                $("#resultado_img").attr("src",myResults.picture_big);
+                playlist(myResults.id, myResults.tracklist)
+
+            }
+        })
+    }
+
+
+    function playlist(id, playlisturi){
+        limpiarTabla()
+        var myPlaylist = []
+        let UrlPlaylist = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/"+id+"/top?limit=10";
+
+        $.ajax({
+            method: 'GET',
+            url: UrlPlaylist,
+            success:function(response){
+                myPlaylist = response.data
+                console.log(myPlaylist);
+                buildTable2(myPlaylist);
+
+
+            }
+        })
+    }
+
+//////////////
+    function buildTable(data){
+        document.getElementById("resultado").innerHTML ='';
+        $("#resultado2").html("");
+        $("#resultado_img").attr("src","");
+        var table = document.getElementById('myTable')
+
+        for (var i = 0; i < data.length; i++){
+            var row = `<tr>
+
+                            <td><a href="resultado.html?id=${data[i].link}">${data[i].name}</a></td>
+                            <td><img src="${data[i].picture_small}"></td>
+                            <td><button type="submit" class="searchButton" onclick="ShowResult(${data[i].id})"></td>
+                      </tr>`
+            table.innerHTML += row
+
+
+        }
+    }
+///
+        function buildTable2(data){
+        var table = document.getElementById('myPLTable')
+
+        for (var i = 0; i < data.length; i++){
+            var row = `<tr>
+
+                            <td>${data[i].title}</td>
+                            <td><audio src="${data[i].preview}" controls></td>
+                      </tr>`
+            table.innerHTML += row
+
+
+        }
+    }
+
+</script>
 </html>
+
+
+<!-- 3db1bd896f3cd37b3e13bf9ed237007a -->
