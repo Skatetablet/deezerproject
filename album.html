@@ -6,26 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deezer Project</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="api.js"></script>
+
     
 </head>
 <body>
     <nav class="nav navbar">
         <ul >
             <li><a href="index.html" >Home</a></li>
-            <li><a href="genero.html">Genero</a></li>
+            <li><a href="cancion.html">Cancion</a></li>
             <li><a href="artista.html" >Artista</a></li>
             <li><a href="album.html" >Album</a></li>
         </ul>
     </nav>
     <main>
         <section  class="search">
-            <input type="text" class="searchTerm" placeholder="Busca tu album">
-            <button type="submit" class="searchButton">
+            <input type="text" class="searchTerm" placeholder="Busca tu Album" id="SearchTerm">
+            <button type="submit" class="searchButton" onclick="buscarAlbum()">
                 <img src="img/magnifier.png" alt="">
             </button>
         </section>
     
-        <section id="albumarea" class="p-3"></section>
+        <section id="albumarea" class="p-3">
+            
+
+
+        </section>
         
     </main>
+    <style>
+    th{ 
+        color:#fff;
+            }
+</style>
+<div id="resultado">
+</div>
+<div id="resultado2">
+</div>
+<img src="" id="resultado_img" >
+<div id="audio"></div>
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>First</th>
+        <th>Last</th>
+        <th>Email</th>
+    </tr>
+
+    <tbody id="myTable">
+    <tbody id="myPLTable">
+        
+    </tbody>
+</table>
 </html>
