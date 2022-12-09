@@ -132,3 +132,138 @@ ul li a:hover {
     cursor: pointer;
     font-size: 20px;
   }
+
+/* CSS */
+.btn-card {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.btn-card:hover,
+.btn-card:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.btn-card:hover {
+  transform: translateY(-1px);
+}
+
+.btn-card:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+  table {
+    text-align: center;
+    vertical-align: middle;
+}
+
+  #resultado,
+  #resultado2,
+  #audio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  #resultado,
+  #resultado2 {
+    font-size: 20px;
+  }
+
+  #resultado_img {
+    margin-left: 700px;
+  }
+
+  .container-cancion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    background-color: #c1f1fc;
+    margin: 50px;
+    height: 800px;
+    width: 300px;
+  }
+
+  .cancion-title,
+  .cancion-artist {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  .cancion-cover img{
+    width: 100%;
+  }
+
+
+  .container-artist {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #c1f1fc;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    margin: 50px;
+    height: 800px;
+    width: 300px;
+  }
+
+  .artist-name a{
+    font-size: 25px;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .container-album {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #c1f1fc;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    margin: 50px;
+    height: 800px;
+    width: 300px;
+  }
+
+  .album-title,
+  .album-artist {
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  .album-cover img{
+    width: 100%;
+  }

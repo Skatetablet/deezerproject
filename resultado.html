@@ -24,6 +24,7 @@
             <button type="submit" class="searchButton" onclick="buscarTermino()">
                 <img src="img/magnifier.png" alt="">
             </button>
+            
         </section>
     
         <section id="albumarea" class="p-3">
@@ -59,7 +60,7 @@
     }    
 
     function buscarTermino(){
-        limpiarTabla()
+        
 
         var SearchTerm = $("#SearchTerm").val();
         let urlXD = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/artist?q=" + SearchTerm;

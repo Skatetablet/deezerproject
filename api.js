@@ -170,11 +170,11 @@
         var table = document.getElementById('myTable')
 
         for (var i = 0; i < data.length; i++){
-            var row = `<tr>
-
-                            <td><a href="resultado.html?id=${data[i].link}">${data[i].name}</a></td>
-                            <td><img src="${data[i].picture_small}"></td>
-                            <td><button type="submit" class="searchButton" onclick="ShowResult(${data[i].id})"></td>
+            var row = `<tr class="container-artist">
+                            <td class="artist-cover"><img src="${data[i].picture_medium}"></td>
+                            <td class="artist-name"><a href="resultado.html?id=${data[i].link}">${data[i].name}</a></td>
+                            
+                            <td><button type="submit" class="btn-card" onclick="ShowResult(${data[i].id})"><img src="img/music.png"></img></td>
                       </tr>`
             table.innerHTML += row
 
@@ -190,12 +190,12 @@
         var table = document.getElementById('myTable')
 
         for (var i = 0; i < data.length; i++){
-            var row = `<tr>
-
-                            <td>${data[i].title}</td>
-                            <td>${data[i].artist.name}</td>
-                            <td><img src="${data[i].album.cover_small}"></td>
-                            <td><button type="submit" class="searchButton" onclick="ShowTrack(${data[i].id})"></td>
+            var row = `<tr class="container-cancion">
+                            
+                            <td class="cancion-cover"><img src="${data[i].album.cover_medium}" ></td>
+                            <td class="cancion-title">${data[i].title}</td>
+                            <td class="cancion-artist">${data[i].artist.name}</td>
+                            <td><button type="submit" class="btn-card" onclick="ShowTrack(${data[i].id})"><img src="img/music.png"></img></button></button></td>
                       </tr>`
             table.innerHTML += row
 
@@ -212,12 +212,11 @@
         var table = document.getElementById('myTable')
 
         for (var i = 0; i < data.length; i++){
-            var row = `<tr>
-
-                            <td>${data[i].title}</td>
-                            <td>${data[i].artist.name}</td>
-                            <td><img src="${data[i].cover_small}"></td>
-                            <td><button type="submit" class="searchButton" onclick="ShowAlbum(${data[i].id})"></td>
+            var row = `<tr class="container-album">
+                            <td class="album-cover"><img src="${data[i].cover_medium}"></td>
+                            <td class="album-title">${data[i].title}</td>
+                            <td class="album-artist">${data[i].artist.name}</td>
+                            <td><button type="submit" class="btn-card" onclick="ShowAlbum(${data[i].id})"><img src="img/music.png"></img></td>
                       </tr>`
             table.innerHTML += row
 
