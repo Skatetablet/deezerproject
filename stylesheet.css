@@ -217,7 +217,9 @@ ul li a:hover {
   }
 
   #resultado_img {
-    margin-left: 700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .container-cancion {
@@ -282,3 +284,16 @@ ul li a:hover {
   .album-cover img{
     width: 100%;
   }
+
+  .center-pl {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #myPLTables {
+  
+    margin-left:auto;
+    margin-right:auto;
+
+  }
+  

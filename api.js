@@ -229,7 +229,9 @@
         var table = document.getElementById('myPLTable')
 
         for (var i = 0; i < data.length; i++){
-            var row = `<tr>
+            var row = `
+                        <th>Canciones del momento</th>
+                        <tr>
 
                             <td>${data[i].title}</td>
                             <td><audio src="${data[i].preview}" controls></td>
