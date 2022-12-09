@@ -52,6 +52,21 @@ ul li a:hover {
     width: 25%;
 }
 
+.info {
+  display: inline-block;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 200px;
+  height: 100px;
+  background-color: #c1f1fc;
+  text-align: center;
+  padding: 10px;
+}
+
+
+
 .btn {
   align-items: center;
   background-clip: padding-box;
